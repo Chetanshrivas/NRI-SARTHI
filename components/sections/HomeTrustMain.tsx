@@ -178,7 +178,7 @@ export function HomeTrustMain() {
         >
           <path
             d="M0 30C180 6 360 6 540 28C720 50 900 50 1080 28C1260 6 1350 8 1440 22V64H0Z"
-            fill="#f3efe6"
+            fill="var(--color-paper)"
           />
         </svg>
       </div>

@@ -1,6 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
+import {
+  ArrowUpRight,
+  Mail,
+  MapPin,
+  Phone,
+} from "lucide-react";
 import { site } from "../../data/site";
 
 const exploreLinks = [
@@ -13,49 +18,220 @@ const exploreLinks = [
 
 export function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-stone-900 text-stone-100">
-      <div aria-hidden="true" className="pointer-events-none absolute -right-24 -top-24 h-80 w-80 rounded-full border border-champagne/10" />
-      <div aria-hidden="true" className="pointer-events-none absolute right-8 top-8 h-48 w-48 rounded-full border border-champagne/10" />
-      <div className="site-container relative py-16 sm:py-20 lg:py-24">
-        <div className="grid gap-14 lg:grid-cols-3 lg:gap-16">
-          <div>
-            <Link href="/" aria-label="NRI Sarthi home" className="inline-flex items-center gap-3">
-              <Image src="/images/nri-sarthi-logo.png" alt="NRI Sarthi" width={100} height={76} className="h-16 w-auto object-contain" />
-              <span className="hidden sm:block">
-                <span className="block font-display text-2xl leading-none text-stone-50">NRI SARTHI</span>
-                <span className="mt-1.5 block text-xs font-semibold uppercase tracking-widest text-stone-400">Property & Asset Advisors</span>
+    <footer className="relative overflow-hidden bg-ink text-ivory">
+      {/* Premium Top Wave */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-0 z-10 overflow-hidden leading-none"
+      >
+        <svg
+          viewBox="0 0 1440 100"
+          preserveAspectRatio="none"
+          className="block h-14 w-full sm:h-16 lg:h-20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 0H1440V42C1310 68 1200 82 1060 65C910 47 840 17 700 30C555 43 455 78 315 66C185 55 92 28 0 38V0Z"
+            fill="var(--color-ivory)"
+          />
+        </svg>
+      </div>
+
+      {/* Champagne Atmosphere */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute right-0 top-20 h-96 w-96 rounded-full bg-champagne/8 blur-3xl"
+      />
+
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute bottom-20 left-0 h-72 w-72 rounded-full bg-sage-deep/10 blur-3xl"
+      />
+
+      {/* Main Footer */}
+      <div className="site-container relative z-20 pt-24 pb-8 sm:pt-28 sm:pb-10 lg:pt-32">
+        <div className="grid gap-14 lg:grid-cols-12 lg:gap-12">
+          {/* BRAND */}
+          <div className="lg:col-span-5">
+            <Link
+              href="/"
+              aria-label="NRI Sarthi home"
+              className="group inline-flex items-center gap-4"
+            >
+              <span className="flex h-16 w-16 items-center justify-center overflow-hidden rounded-full border border-champagne/30 bg-ivory/5 transition-all duration-300 group-hover:border-champagne/60 group-hover:bg-ivory/10">
+                <Image
+                  src="/images/nri-sarthi-logo.png"
+                  alt="NRI Sarthi"
+                  width={100}
+                  height={76}
+                  className="h-14 w-auto object-contain"
+                />
+              </span>
+
+              <span>
+                <span className="block font-display text-2xl leading-none text-ivory sm:text-3xl">
+                  NRI SARTHI
+                </span>
+
+                <span className="mt-2 block text-[0.65rem] font-semibold uppercase tracking-widest text-white/45">
+                  Property &amp; Asset Advisors
+                </span>
               </span>
             </Link>
-            <div className="mt-8 h-px w-16 bg-champagne/60" />
-            <h2 className="font-display mt-7 max-w-xl text-4xl font-medium leading-tight text-stone-50 sm:text-5xl">{site.tagline}</h2>
-            <p className="mt-5 max-w-xl text-sm leading-7 text-stone-400">One trusted India-side point of coordination for property, legal, documentation, taxation, banking and asset-related requirements.</p>
+
+            <div className="mt-8 flex items-center gap-3">
+              <span className="h-px w-12 bg-champagne" />
+              <span className="h-1.5 w-1.5 rounded-full bg-champagne" />
+            </div>
+
+            <h2 className="font-display mt-7 max-w-xl text-4xl font-medium leading-tight text-ivory sm:text-5xl">
+              {site.tagline}
+            </h2>
+
+            <p className="mt-5 max-w-xl text-sm leading-7 text-white/55 sm:text-base sm:leading-8">
+              One trusted India-side point of coordination for property,
+              legal, documentation, taxation, banking and asset-related
+              requirements.
+            </p>
+
+            <Link
+              href="/contact"
+              className="group mt-8 inline-flex items-center gap-3 rounded-full bg-champagne px-6 py-3.5 text-sm font-semibold text-ink shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:bg-champagne-light hover:shadow-xl"
+            >
+              Start a conversation
+
+              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-ink/10">
+                <ArrowUpRight
+                  size={14}
+                  strokeWidth={1.7}
+                  aria-hidden="true"
+                  className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                />
+              </span>
+            </Link>
           </div>
-          <div>
-            <div className="mb-6 text-xs font-semibold uppercase tracking-widest text-champagne">Explore</div>
-            <nav className="grid gap-3.5" aria-label="Footer navigation">
+
+          {/* EXPLORE */}
+          <div className="lg:col-span-3">
+            <div className="mb-6 flex items-center gap-3">
+              <span className="h-px w-8 bg-champagne" />
+
+              <span className="text-xs font-semibold uppercase tracking-widest text-champagne">
+                Explore
+              </span>
+            </div>
+
+            <nav
+              className="grid border-t border-white/10"
+              aria-label="Footer navigation"
+            >
               {exploreLinks.map(([label, href]) => (
-                <Link key={href} href={href} className="group flex items-center justify-between border-b border-stone-700/70 pb-3 text-sm text-stone-400 transition-colors hover:text-stone-50">
-                  <span>{label}</span>
-                  <ArrowUpRight size={14} strokeWidth={1.6} aria-hidden="true" className="opacity-0 transition-all group-hover:translate-x-1 group-hover:opacity-100" />
+                <Link
+                  key={href}
+                  href={href}
+                  className="group flex items-center justify-between border-b border-white/10 py-4 text-sm text-white/55 transition-colors duration-300 hover:text-ivory"
+                >
+                  <span className="transition-transform duration-300 group-hover:translate-x-1">
+                    {label}
+                  </span>
+
+                  <ArrowUpRight
+                    size={15}
+                    strokeWidth={1.5}
+                    aria-hidden="true"
+                    className="text-champagne opacity-0 transition-all duration-300 group-hover:translate-x-0.5 group-hover:opacity-100"
+                  />
                 </Link>
               ))}
             </nav>
           </div>
-          <div>
-            <div className="mb-6 text-xs font-semibold uppercase tracking-widest text-champagne">Contact</div>
-            <div className="grid gap-5">
-              <a href={`mailto:${site.email}`} className="flex items-start gap-3 text-sm text-stone-400 transition-colors hover:text-stone-50"><Mail size={17} strokeWidth={1.5} aria-hidden="true" className="mt-0.5 shrink-0 text-champagne" /><span>{site.email}</span></a>
-              <a href={`tel:${site.phonePrimary.replace(/\s/g, "")}`} className="flex items-start gap-3 text-sm text-stone-400 transition-colors hover:text-stone-50"><Phone size={17} strokeWidth={1.5} aria-hidden="true" className="mt-0.5 shrink-0 text-champagne" /><span>{site.phonePrimary}</span></a>
-              <a href={`tel:${site.phoneSecondary.replace(/\s/g, "")}`} className="flex items-start gap-3 text-sm text-stone-400 transition-colors hover:text-stone-50"><Phone size={17} strokeWidth={1.5} aria-hidden="true" className="mt-0.5 shrink-0 text-champagne" /><span>{site.phoneSecondary}</span></a>
-              <div className="flex items-start gap-3 text-sm leading-6 text-stone-400"><MapPin size={17} strokeWidth={1.5} aria-hidden="true" className="mt-0.5 shrink-0 text-champagne" /><span>{site.office}</span></div>
+
+          {/* CONTACT */}
+          <div className="lg:col-span-4">
+            <div className="mb-6 flex items-center gap-3">
+              <span className="h-px w-8 bg-champagne" />
+
+              <span className="text-xs font-semibold uppercase tracking-widest text-champagne">
+                Contact
+              </span>
             </div>
-            <Link href="/contact" className="mt-7 inline-flex items-center gap-2 rounded-full border border-champagne/40 px-5 py-3 text-xs font-semibold text-stone-100 transition-all hover:border-champagne hover:bg-champagne hover:text-white">Start a conversation <ArrowUpRight size={14} strokeWidth={1.6} aria-hidden="true" /></Link>
+
+            <div className="grid border-t border-white/10">
+              <a
+                href={`mailto:${site.email}`}
+                className="group flex items-start gap-4 border-b border-white/10 py-4 text-sm text-white/55 transition-colors duration-300 hover:text-ivory"
+              >
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-champagne/20 bg-champagne/5 transition-all duration-300 group-hover:border-champagne/50 group-hover:bg-champagne/10">
+                  <Mail
+                    size={16}
+                    strokeWidth={1.5}
+                    aria-hidden="true"
+                    className="text-champagne"
+                  />
+                </span>
+
+                <span className="pt-1.5">{site.email}</span>
+              </a>
+
+              <a
+                href={`tel:${site.phonePrimary.replace(/\s/g, "")}`}
+                className="group flex items-start gap-4 border-b border-white/10 py-4 text-sm text-white/55 transition-colors duration-300 hover:text-ivory"
+              >
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-champagne/20 bg-champagne/5 transition-all duration-300 group-hover:border-champagne/50 group-hover:bg-champagne/10">
+                  <Phone
+                    size={16}
+                    strokeWidth={1.5}
+                    aria-hidden="true"
+                    className="text-champagne"
+                  />
+                </span>
+
+                <span className="pt-1.5">{site.phonePrimary}</span>
+              </a>
+
+              <a
+                href={`tel:${site.phoneSecondary.replace(/\s/g, "")}`}
+                className="group flex items-start gap-4 border-b border-white/10 py-4 text-sm text-white/55 transition-colors duration-300 hover:text-ivory"
+              >
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-champagne/20 bg-champagne/5 transition-all duration-300 group-hover:border-champagne/50 group-hover:bg-champagne/10">
+                  <Phone
+                    size={16}
+                    strokeWidth={1.5}
+                    aria-hidden="true"
+                    className="text-champagne"
+                  />
+                </span>
+
+                <span className="pt-1.5">{site.phoneSecondary}</span>
+              </a>
+
+              <div className="flex items-start gap-4 border-b border-white/10 py-4 text-sm leading-6 text-white/55">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-champagne/20 bg-champagne/5">
+                  <MapPin
+                    size={16}
+                    strokeWidth={1.5}
+                    aria-hidden="true"
+                    className="text-champagne"
+                  />
+                </span>
+
+                <span className="pt-1.5">{site.office}</span>
+              </div>
+            </div>
           </div>
         </div>
-        <div className="mt-16 border-t border-stone-700/70 pt-6">
-          <div className="flex flex-col gap-4 text-xs text-stone-500 md:flex-row md:items-center md:justify-between">
-            <span>© 2026 NRI SARTHI — Property & Asset Advisors.</span>
-            <span className="max-w-xl leading-5 md:text-right">General information only. Specific matters should be assessed on their facts and applicable law.</span>
+
+        {/* FOOTER DIVIDER */}
+        <div className="mt-14 border-t border-white/10 pt-6 sm:mt-16">
+          <div className="flex flex-col gap-4 text-xs text-white/35 md:flex-row md:items-center md:justify-between">
+            <span>
+              © 2026 NRI SARTHI — Property &amp; Asset Advisors.
+            </span>
+
+            <span className="max-w-xl leading-5 md:text-right">
+              General information only. Specific matters should be assessed
+              on their facts and applicable law.
+            </span>
           </div>
         </div>
       </div>

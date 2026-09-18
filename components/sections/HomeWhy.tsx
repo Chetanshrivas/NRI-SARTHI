@@ -26,7 +26,7 @@ export function HomeWhy() {
           viewBox="0 0 1440 90"
           preserveAspectRatio="none"
           className="block h-12 w-full sm:h-14 lg:h-16"
-          fill="var(--color-paper)"
+          fill="var(--color-ivory)"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path d="M0 0H1440V28C1320 58 1200 70 1080 58C930 43 860 17 720 28C570 40 470 72 320 61C190 51 95 26 0 35V0Z" />

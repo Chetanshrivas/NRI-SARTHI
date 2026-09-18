@@ -345,23 +345,32 @@ export function Navbar() {
           </nav>
 
           {/* Desktop CTA */}
-          <Link
-            href="/contact"
-            className={`group hidden items-center gap-2 rounded-full border px-5 py-2.5 text-xs font-semibold transition-all duration-300 lg:inline-flex ${
-              scrolled
-                ? "border-ink/15 bg-ink text-ivory hover:border-champagne hover:bg-champagne"
-                : "border-white/30 bg-white/10 text-white shadow-lg backdrop-blur-md hover:border-champagne hover:bg-champagne hover:text-ink"
-            }`}
-          >
-            <span>Request a Consultation</span>
+<Link
+  href="/contact"
+  className={`group/btn relative hidden items-center justify-center gap-2.5 overflow-hidden rounded-full border px-5 py-2.5 text-xs font-semibold tracking-wide transition-all duration-500 ease-out hover:-translate-y-0.5 lg:inline-flex ${
+    scrolled
+      ? "border-ink bg-ink text-ivory shadow-lg hover:border-champagne hover:bg-champagne"
+      : "border-white/30 bg-white/10 text-white shadow-lg backdrop-blur-md hover:border-champagne hover:bg-champagne hover:text-ink"
+  }`}
+>
+  {/* Premium shine sweep */}
+  <span
+    aria-hidden="true"
+    className="absolute inset-0 -translate-x-full bg-linear-to-r from-transparent via-white/40 to-transparent transition-transform duration-700 ease-out group-hover/btn:translate-x-full"
+  />
 
-            <ArrowUpRight
-              size={14}
-              strokeWidth={1.7}
-              aria-hidden="true"
-              className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-            />
-          </Link>
+  {/* Button Content */}
+  <span className="relative">
+    Request a Consultation
+  </span>
+
+  <ArrowUpRight
+    size={14}
+    strokeWidth={1.7}
+    aria-hidden="true"
+    className="relative transition-transform duration-500 ease-out group-hover/btn:translate-x-1 group-hover/btn:-translate-y-0.5"
+  />
+</Link>
 
           {/* Mobile Menu Button */}
           <button

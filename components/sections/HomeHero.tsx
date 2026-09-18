@@ -128,50 +128,69 @@ export function HomeHero() {
           </motion.p>
 
           {/* CTA Buttons */}
-          <motion.div
-            initial={{
-              opacity: 0,
-              y: 18,
-            }}
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-            transition={{
-              duration: 0.7,
-              delay: 0.26,
-              ease: "easeOut",
-            }}
-            className="mt-8 flex flex-col gap-3 sm:flex-row"
-          >
-            <Link
-              href="/contact"
-              className="group inline-flex items-center justify-center gap-2 rounded-full bg-champagne px-6 py-3.5 text-sm font-semibold text-ink shadow-xl transition-all duration-300 hover:-translate-y-0.5 hover:bg-champagne-light hover:shadow-2xl"
-            >
-              <span>Request a consultation</span>
+{/* CTA Buttons */}
+<motion.div
+  initial={{
+    opacity: 0,
+    y: 18,
+  }}
+  animate={{
+    opacity: 1,
+    y: 0,
+  }}
+  transition={{
+    duration: 0.7,
+    delay: 0.26,
+    ease: "easeOut",
+  }}
+  className="mt-8 flex flex-col gap-3 sm:flex-row"
+>
+  {/* Primary CTA */}
+  <Link
+    href="/contact"
+    className="group/btn relative inline-flex items-center justify-center gap-2.5 overflow-hidden rounded-full bg-champagne px-6 py-3.5 text-sm font-semibold tracking-wide text-ink shadow-xl transition-all duration-500 ease-out hover:-translate-y-0.5 hover:bg-champagne-light hover:shadow-2xl"
+  >
+    {/* Premium Shine */}
+    <span
+      aria-hidden="true"
+      className="absolute inset-0 -translate-x-full bg-linear-to-r from-transparent via-white/45 to-transparent transition-transform duration-700 ease-out group-hover/btn:translate-x-full"
+    />
 
-              <ArrowUpRight
-                size={16}
-                strokeWidth={1.7}
-                aria-hidden="true"
-                className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-              />
-            </Link>
+    <span className="relative">
+      Request a consultation
+    </span>
 
-            <Link
-              href="/services"
-              className="group inline-flex items-center justify-center gap-2 rounded-full border border-white/25 bg-white/10 px-6 py-3.5 text-sm font-semibold text-white backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-champagne hover:bg-white/15"
-            >
-              <span>Explore services</span>
+    <ArrowUpRight
+      size={16}
+      strokeWidth={1.7}
+      aria-hidden="true"
+      className="relative transition-transform duration-500 ease-out group-hover/btn:-translate-y-0.5 group-hover/btn:translate-x-0.5"
+    />
+  </Link>
 
-              <ArrowUpRight
-                size={16}
-                strokeWidth={1.7}
-                aria-hidden="true"
-                className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-              />
-            </Link>
-          </motion.div>
+  {/* Secondary CTA */}
+  <Link
+    href="/services"
+    className="group/btn relative inline-flex items-center justify-center gap-2.5 overflow-hidden rounded-full border border-white/25 bg-white/10 px-6 py-3.5 text-sm font-semibold tracking-wide text-white shadow-lg backdrop-blur-md transition-all duration-500 ease-out hover:-translate-y-0.5 hover:border-champagne hover:bg-white/15 hover:shadow-xl"
+  >
+    {/* Premium Shine */}
+    <span
+      aria-hidden="true"
+      className="absolute inset-0 -translate-x-full bg-linear-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 ease-out group-hover/btn:translate-x-full"
+    />
+
+    <span className="relative">
+      Explore services
+    </span>
+
+    <ArrowUpRight
+      size={16}
+      strokeWidth={1.7}
+      aria-hidden="true"
+      className="relative transition-transform duration-500 ease-out group-hover/btn:-translate-y-0.5 group-hover/btn:translate-x-0.5"
+    />
+  </Link>
+</motion.div>
 
           {/* Trust Strip */}
           <motion.div
