@@ -18,7 +18,7 @@ export function HomeHero() {
         className="absolute inset-0 -z-20"
       >
         <Image
-          src="/hero/nri-Sarthi-hero.webp"
+          src="/hero/nri-sarthi-hero.webp"
           alt=""
           fill
           priority
@@ -27,25 +27,25 @@ export function HomeHero() {
         />
       </div>
 
-      {/* Overall image treatment */}
+      {/* Overall Image Treatment */}
       <div
         aria-hidden="true"
         className="absolute inset-0 -z-10 bg-ink/45"
       />
 
-      {/* Left-side readability */}
+      {/* Left-side Readability */}
       <div
         aria-hidden="true"
         className="absolute inset-0 -z-10 bg-linear-to-r from-ink/90 via-ink/60 to-ink/10"
       />
 
-      {/* Bottom cinematic fade */}
+      {/* Bottom Cinematic Fade */}
       <div
         aria-hidden="true"
         className="absolute inset-x-0 bottom-0 -z-10 h-56 bg-linear-to-t from-ink/80 to-transparent"
       />
 
-      {/* Subtle champagne atmosphere */}
+      {/* Subtle Champagne Atmosphere */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute right-0 top-0 -z-10 h-96 w-96 rounded-full bg-champagne/10 blur-3xl"
@@ -71,7 +71,6 @@ export function HomeHero() {
             className="flex items-center gap-3 text-xs font-semibold uppercase tracking-widest text-champagne-light"
           >
             <span className="h-px w-10 bg-champagne" />
-
             India-side support for NRIs
           </motion.div>
 
@@ -195,7 +194,6 @@ export function HomeHero() {
                 className="text-champagne-light"
                 aria-hidden="true"
               />
-
               India-side coordination
             </div>
 
@@ -208,7 +206,6 @@ export function HomeHero() {
                 className="text-champagne-light"
                 aria-hidden="true"
               />
-
               For overseas Indians
             </div>
           </motion.div>
