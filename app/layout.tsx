@@ -4,6 +4,7 @@ import "./globals.css";
 import { Navbar } from "../components/layout/Navbar";
 import { Footer } from "../components/layout/Footer";
 import { Providers } from "../components/layout/Providers";
+import { WhatsAppFloat } from "../components/layout/WhatsAppFloat";
 import { site } from "../data/site";
 
 const displayFont = Cormorant_Garamond({
@@ -78,6 +79,7 @@ export default function RootLayout({
       >
         <Providers>
           <Navbar />
+           <WhatsAppFloat />
           <main>{children}</main>
           <Footer />
         </Providers>

@@ -225,7 +225,7 @@ export function HomeHero() {
                 className="text-champagne-light"
                 aria-hidden="true"
               />
-              For overseas Indians
+              For Indians overseas
             </div>
           </motion.div>
         </div>

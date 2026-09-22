@@ -21,8 +21,9 @@ const trustItems = [
     icon: Building2,
   },
   {
-    label: "Direct coordination",
+    label: "Direct contact",
     value: "9899220695",
+    sublabel: "WhatsApp · Messages only",
     icon: Phone,
   },
   {
@@ -33,10 +34,10 @@ const trustItems = [
 ];
 
 const keywords = [
-  "Property Coordination",
-  "Legal & Documentation",
+  "Property Support",
+  "Legal & Documentation Support",
   "NRI Asset Support",
-  "Local Follow-up",
+  "India-side Assistance",
 ];
 
 function TrustSet() {
@@ -66,6 +67,12 @@ function TrustSet() {
               <span className="mt-1 font-display text-lg font-medium leading-none text-ivory sm:text-xl">
                 {item.value}
               </span>
+
+              {item.sublabel ? (
+                <span className="mt-1 text-[10px] font-medium uppercase tracking-wider text-white/35">
+                  {item.sublabel}
+                </span>
+              ) : null}
             </span>
 
             <span
@@ -152,7 +159,7 @@ export function HomeTrustMain() {
       <div className="site-container">
         <div className="flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-white/10 py-3.5">
           <span className="text-xs font-semibold uppercase tracking-widest text-white/35">
-            Your India-side point of coordination
+            Your India-side support
           </span>
 
           <span

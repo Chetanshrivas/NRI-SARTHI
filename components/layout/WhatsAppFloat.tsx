@@ -1,0 +1,78 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
+const WHATSAPP_URL = "https://wa.me/919899220695";
+
+export function WhatsAppFloat() {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+
+      // Top / Hero area
+      if (scrollPosition <= 120) {
+        setVisible(false);
+        return;
+      }
+
+      // Anywhere below the Hero area
+      setVisible(true);
+    };
+
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  return (
+    <a
+      href={WHATSAPP_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Chat with NRI Sarthi on WhatsApp"
+      title="Chat with NRI Sarthi on WhatsApp"
+      className={`group fixed bottom-5 right-5 z-999 flex h-13 w-13 items-center justify-center rounded-full bg-emerald-500 text-white shadow-xl transition-all duration-500 ease-out hover:bg-emerald-600 sm:bottom-7 sm:right-7 sm:h-14 sm:w-14 ${
+        visible
+          ? "translate-y-0 scale-100 opacity-100"
+          : "pointer-events-none translate-y-4 scale-75 opacity-0"
+      }`}
+    >
+      {/* Hover glow */}
+      <span
+        aria-hidden="true"
+        className="absolute inset-0 rounded-full bg-white/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+      />
+
+      {/* WhatsApp icon */}
+      <svg
+        viewBox="0 0 32 32"
+        aria-hidden="true"
+        className="relative h-6 w-6 transition-transform duration-300 group-hover:scale-110 sm:h-7 sm:w-7"
+      >
+        <path
+          fill="currentColor"
+          d="M16 3.2C8.93 3.2 3.2 8.93 3.2 16c0 2.26.59 4.39 1.72 6.26L3.1 28.8l6.7-1.75A12.72 12.72 0 0 0 16 28.8c7.07 0 12.8-5.73 12.8-12.8S23.07 3.2 16 3.2Zm0 23.35c-2.1 0-4.16-.57-5.96-1.66l-.43-.26-3.98 1.04 1.06-3.88-.28-.45A10.48 10.48 0 1 1 16 26.55Z"
+        />
+
+        <path
+          fill="currentColor"
+          d="M21.1 18.24c-.28-.14-1.66-.82-1.92-.91-.26-.1-.45-.14-.64.14-.19.28-.73.91-.9 1.1-.16.19-.33.21-.61.07-.28-.14-1.18-.44-2.25-1.4-.83-.74-1.4-1.65-1.56-1.93-.16-.28-.02-.43.12-.57.13-.13.28-.33.42-.49.14-.16.19-.28.28-.47.09-.19.05-.35-.02-.49-.07-.14-.64-1.53-.88-2.1-.23-.55-.47-.48-.64-.49h-.54c-.19 0-.49.07-.75.35-.26.28-1 .98-1 2.38s1.02 2.76 1.16 2.95c.14.19 2 3.05 4.84 4.28.68.29 1.21.46 1.63.59.68.22 1.3.19 1.79.11.55-.08 1.66-.68 1.89-1.34.23-.65.23-1.21.16-1.33-.07-.12-.26-.19-.54-.33Z"
+        />
+      </svg>
+
+      {/* Soft glow */}
+      <span
+        aria-hidden="true"
+        className="absolute -inset-1 -z-10 rounded-full bg-emerald-500/30 opacity-70 blur-md"
+      />
+    </a>
+  );
+}
