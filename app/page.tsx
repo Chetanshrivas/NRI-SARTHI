@@ -8,6 +8,7 @@ import { HomeProcess } from "../components/sections/HomeProcess";
 import { HomeAbout } from "../components/sections/HomeAbout";
 import { HomeGuide } from "../components/sections/HomeGuide";
 import { HomeCta } from "../components/sections/HomeCta";
+import { HomeRecoveryAssets } from "../components/sections/HomeRecoveryAssets";
 
 export default function HomePage() {
   return (
@@ -22,6 +23,7 @@ export default function HomePage() {
       <HomeAbout />
       <HomeGuide />
       <HomeCta />
+      <HomeRecoveryAssets />
     </>
   );
 }

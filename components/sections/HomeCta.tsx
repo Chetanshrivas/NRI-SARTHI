@@ -6,7 +6,7 @@ import { ArrowRight } from "lucide-react";
 
 export function HomeCta() {
   return (
-    <section className="bg-ivory pb-20 sm:pb-24 lg:pb-32">
+    <section className="bg-ivory pt-20 pb-20 sm:pt-24 sm:pb-24 lg:pt-28 lg:pb-28">
       <div className="site-container">
         <motion.div
           initial={{ opacity: 0, y: 32 }}
@@ -24,9 +24,20 @@ export function HomeCta() {
             }}
           />
 
-          <div aria-hidden="true" className="pointer-events-none absolute right-0 top-0 h-full w-2/3 bg-linear-to-l from-stone-800/80 via-stone-900 to-transparent" />
-          <div aria-hidden="true" className="pointer-events-none absolute -right-24 -top-24 h-96 w-96 rounded-full bg-champagne/8 blur-[100px]" />
-          <div aria-hidden="true" className="pointer-events-none absolute -bottom-32 left-1/4 h-72 w-72 rounded-full bg-champagne/6 blur-[100px]" />
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute right-0 top-0 h-full w-2/3 bg-linear-to-l from-stone-800/80 via-stone-900 to-transparent"
+          />
+
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -right-24 -top-24 h-96 w-96 rounded-full bg-champagne/8 blur-[100px]"
+          />
+
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -bottom-32 left-1/4 h-72 w-72 rounded-full bg-champagne/6 blur-[100px]"
+          />
 
           <div
             aria-hidden="true"
@@ -47,7 +58,8 @@ export function HomeCta() {
               </h2>
 
               <p className="mt-6 max-w-md text-sm leading-7 text-stone-400 sm:text-base">
-                Share the basic details. A clearer next step starts with a better understanding of the issue.
+                Share the basic details. A clearer next step starts with a
+                better understanding of the issue.
               </p>
             </div>
 
@@ -59,8 +71,14 @@ export function HomeCta() {
                 aria-hidden="true"
                 className="absolute inset-0 -translate-x-full bg-linear-to-r from-transparent via-white/40 to-transparent transition-transform duration-700 ease-out group-hover/btn:translate-x-full"
               />
+
               <span className="relative">Request a consultation</span>
-              <ArrowRight size={16} aria-hidden="true" className="relative transition-transform duration-500 ease-out group-hover/btn:translate-x-1" />
+
+              <ArrowRight
+                size={16}
+                aria-hidden="true"
+                className="relative transition-transform duration-500 ease-out group-hover/btn:translate-x-1"
+              />
             </Link>
           </div>
         </motion.div>

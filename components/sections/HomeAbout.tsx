@@ -119,9 +119,11 @@ export function HomeAbout() {
                   <span className="text-xs font-semibold uppercase tracking-widest text-champagne">
                     India-side representative
                   </span>
+
                   <strong className="mt-1.5 block truncate font-display text-xl font-medium leading-tight text-ink sm:text-2xl">
                     Adv. Tarun Gupta &amp; Team
                   </strong>
+
                   <span className="mt-1.5 block text-xs leading-5 text-ink-soft">
                     Property &amp; Asset Advisory · India-side coordination
                   </span>
@@ -133,6 +135,7 @@ export function HomeAbout() {
                 <span className="text-xs font-semibold uppercase tracking-widest text-ink/35">
                   NRI Sarthi
                 </span>
+
                 <span className="text-xs font-semibold uppercase tracking-widest text-champagne">
                   04 — About
                 </span>
@@ -157,6 +160,7 @@ export function HomeAbout() {
               <span className="block text-5xl font-medium leading-[0.95] tracking-tight sm:text-6xl lg:text-7xl">
                 Adv. Tarun Gupta
               </span>
+
               <span className="mt-1 block text-4xl font-normal italic leading-none tracking-tight text-sage-deep sm:text-5xl lg:text-6xl">
                 &amp; Team
               </span>
@@ -169,21 +173,49 @@ export function HomeAbout() {
               requirements in India.
             </p>
 
+            {/* Experience highlight */}
+            <motion.div
+              initial={{ opacity: 0, y: 14 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.12, ease: EASE }}
+              className="mt-8 flex items-center gap-5 border-y border-champagne/20 py-5"
+            >
+              <span className="font-display text-4xl font-medium leading-none text-champagne sm:text-5xl">
+                15+
+              </span>
+
+              <span className="h-10 w-px bg-champagne/25" />
+
+              <div>
+                <strong className="block text-sm font-semibold uppercase tracking-wide text-ink">
+                  Years of Experience
+                </strong>
+
+                <span className="mt-1 block text-sm leading-6 text-ink-soft">
+                  Professional experience in property and asset-related
+                  matters.
+                </span>
+              </div>
+            </motion.div>
+
             {/* Two focus areas */}
-            <div className="mt-10 grid border-y border-ink/10 sm:grid-cols-2">
+            <div className="mt-10 grid border-b border-ink/10 sm:grid-cols-2">
               <motion.div
                 initial={{ opacity: 0, y: 14 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.6, delay: 0.15, ease: EASE }}
+                transition={{ duration: 0.6, delay: 0.2, ease: EASE }}
                 className="border-b border-ink/10 py-7 sm:border-b-0 sm:border-r sm:border-champagne/20 sm:pr-8"
               >
                 <span className="font-display text-2xl italic leading-none text-champagne">
                   01
                 </span>
+
                 <strong className="mt-4 block text-sm font-semibold text-ink">
                   Property &amp; asset focus
                 </strong>
+
                 <span className="mt-3 block text-sm leading-6 text-ink-soft">
                   Structured support around the India-side matters an owner
                   needs to coordinate.
@@ -194,15 +226,17 @@ export function HomeAbout() {
                 initial={{ opacity: 0, y: 14 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.6, delay: 0.26, ease: EASE }}
+                transition={{ duration: 0.6, delay: 0.3, ease: EASE }}
                 className="py-7 sm:pl-8"
               >
                 <span className="font-display text-2xl italic leading-none text-champagne">
                   02
                 </span>
+
                 <strong className="mt-4 block text-sm font-semibold text-ink">
                   Professional coordination
                 </strong>
+
                 <span className="mt-3 block text-sm leading-6 text-ink-soft">
                   Clear communication and follow-up across relevant people and
                   processes.
@@ -212,6 +246,7 @@ export function HomeAbout() {
 
             <Link href="/about" className="button-primary group mt-9">
               About NRI Sarthi
+
               <ArrowRight
                 size={16}
                 strokeWidth={1.7}

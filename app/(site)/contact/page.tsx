@@ -52,7 +52,7 @@ export default function ContactPage() {
           >
             <path
               d="M0 48C180 8 360 8 540 40C720 72 900 82 1080 46C1260 12 1350 12 1440 30V90H0Z"
-              fill="#f3efe6"
+              fill="var(--color-paper)"
             />
           </svg>
         </div>
