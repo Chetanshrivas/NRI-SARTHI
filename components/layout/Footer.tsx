@@ -174,29 +174,22 @@ export function Footer() {
                 <span className="pt-1.5">{site.email}</span>
               </a>
 
-             <a
-                href="https://wa.me/919899220695"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`Message NRI Sarthi on WhatsApp at ${site.phonePrimary}`}
-                className="group flex items-start gap-4 border-b border-white/10 py-4 text-sm text-white/55 transition-colors duration-300 hover:text-ivory"
-              >
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-champagne/20 bg-champagne/5 transition-all duration-300 group-hover:border-champagne/50 group-hover:bg-champagne/10">
-                  <Phone
-                    size={16}
-                    strokeWidth={1.5}
-                    aria-hidden="true"
-                    className="text-champagne"
-                  />
-                </span>
+            {/* PRIMARY PHONE */}
+<a
+  href={`tel:${site.phonePrimary.replace(/\s/g, "")}`}
+  className="group flex items-start gap-4 border-b border-white/10 py-4 text-sm text-white/55 transition-colors duration-300 hover:text-ivory"
+>
+  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-champagne/20 bg-champagne/5 transition-all duration-300 group-hover:border-champagne/50 group-hover:bg-champagne/10">
+    <Phone
+      size={16}
+      strokeWidth={1.5}
+      aria-hidden="true"
+      className="text-champagne"
+    />
+  </span>
 
-                <span className="pt-0.5">
-                  <span className="block">{site.phonePrimary}</span>
-                  <span className="mt-1 block text-xs text-white/35">
-                    WhatsApp · Messages only
-                  </span>
-                </span>
-              </a>
+  <span className="pt-1.5">{site.phonePrimary}</span>
+</a>
 
               {/* SECONDARY PHONE */}
               <a
