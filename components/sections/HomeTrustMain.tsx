@@ -59,14 +59,19 @@ function TrustSet() {
             </span>
 
             <span className="flex flex-col">
-              <span className="text-xs font-semibold uppercase tracking-widest text-white/40">
-                {item.label}
-              </span>
+  <span className="text-xs font-semibold uppercase tracking-widest text-white/40">
+    {item.label}
+  </span>
 
-              <span className="mt-1 font-display text-lg font-medium leading-none text-ivory sm:text-xl">
-                {item.value}
-              </span>
-            </span>
+  <span
+    className="mt-1 font-body text-lg font-semibold leading-none tracking-normal text-ivory sm:text-xl"
+    style={{
+      fontVariantNumeric: "lining-nums tabular-nums",
+    }}
+  >
+    {item.value}
+  </span>
+</span>
 
             <span
               aria-hidden="true"

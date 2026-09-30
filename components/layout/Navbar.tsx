@@ -15,7 +15,7 @@ import {
   X,
 } from "lucide-react";
 import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { services } from "../../data/services";
 
 const mobileLinks = [
@@ -80,11 +80,13 @@ function NavLink({
 
 export function Navbar() {
   const pathname = usePathname();
+  const router = useRouter();
   const { scrollY } = useScroll();
 
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [pendingRoute, setPendingRoute] = useState<string | null>(null);
 
   const headerHeight = useTransform(
     scrollY,
@@ -123,6 +125,21 @@ export function Navbar() {
     }
 
     return pathname === href || pathname.startsWith(`${href}/`);
+  };
+
+  /*
+   * Mobile navigation:
+   * Close the menu first.
+   * Actual navigation happens after the exit animation completes.
+   */
+  const handleMobileNavigate = (href: string) => {
+    if (pendingRoute) {
+      return;
+    }
+
+    setPendingRoute(href);
+    setMobileOpen(false);
+    setServicesOpen(false);
   };
 
   return (
@@ -345,32 +362,32 @@ export function Navbar() {
           </nav>
 
           {/* Desktop CTA */}
-<Link
-  href="/contact"
-  className={`group/btn relative hidden items-center justify-center gap-2.5 overflow-hidden rounded-full border px-5 py-2.5 text-xs font-semibold tracking-wide transition-all duration-500 ease-out hover:-translate-y-0.5 lg:inline-flex ${
-    scrolled
-      ? "border-ink bg-ink text-ivory shadow-lg hover:border-champagne hover:bg-champagne"
-      : "border-white/30 bg-white/10 text-white shadow-lg backdrop-blur-md hover:border-champagne hover:bg-champagne hover:text-ink"
-  }`}
->
-  {/* Premium shine sweep */}
-  <span
-    aria-hidden="true"
-    className="absolute inset-0 -translate-x-full bg-linear-to-r from-transparent via-white/40 to-transparent transition-transform duration-700 ease-out group-hover/btn:translate-x-full"
-  />
+          <Link
+            href="/contact"
+            className={`group/btn relative hidden items-center justify-center gap-2.5 overflow-hidden rounded-full border px-5 py-2.5 text-xs font-semibold tracking-wide transition-all duration-500 ease-out hover:-translate-y-0.5 lg:inline-flex ${
+              scrolled
+                ? "border-ink bg-ink text-ivory shadow-lg hover:border-champagne hover:bg-champagne"
+                : "border-white/30 bg-white/10 text-white shadow-lg backdrop-blur-md hover:border-champagne hover:bg-champagne hover:text-ink"
+            }`}
+          >
+            {/* Premium shine sweep */}
+            <span
+              aria-hidden="true"
+              className="absolute inset-0 -translate-x-full bg-linear-to-r from-transparent via-white/40 to-transparent transition-transform duration-700 ease-out group-hover/btn:translate-x-full"
+            />
 
-  {/* Button Content */}
-  <span className="relative">
-    Request a Consultation
-  </span>
+            {/* Button Content */}
+            <span className="relative">
+              Request a Consultation
+            </span>
 
-  <ArrowUpRight
-    size={14}
-    strokeWidth={1.7}
-    aria-hidden="true"
-    className="relative transition-transform duration-500 ease-out group-hover/btn:translate-x-1 group-hover/btn:-translate-y-0.5"
-  />
-</Link>
+            <ArrowUpRight
+              size={14}
+              strokeWidth={1.7}
+              aria-hidden="true"
+              className="relative transition-transform duration-500 ease-out group-hover/btn:translate-x-1 group-hover/btn:-translate-y-0.5"
+            />
+          </Link>
 
           {/* Mobile Menu Button */}
           <button
@@ -379,9 +396,13 @@ export function Navbar() {
               mobileOpen ? "Close menu" : "Open menu"
             }
             aria-expanded={mobileOpen}
-            onClick={() =>
-              setMobileOpen((value) => !value)
-            }
+            onClick={() => {
+              if (pendingRoute) {
+                return;
+              }
+
+              setMobileOpen((value) => !value);
+            }}
             className={`grid h-10 w-10 place-items-center rounded-full border transition-all duration-300 lg:hidden ${
               scrolled
                 ? "border-ink/15 bg-white text-ink shadow-sm hover:border-champagne"
@@ -398,7 +419,18 @@ export function Navbar() {
       </motion.div>
 
       {/* Mobile Navigation */}
-      <AnimatePresence>
+      <AnimatePresence
+        onExitComplete={() => {
+          if (!pendingRoute) {
+            return;
+          }
+
+          const nextRoute = pendingRoute;
+
+          setPendingRoute(null);
+          router.push(nextRoute);
+        }}
+      >
         {mobileOpen && (
           <motion.div
             initial={{
@@ -437,7 +469,10 @@ export function Navbar() {
                   <Link
                     key={href}
                     href={href}
-                    onClick={() => setMobileOpen(false)}
+                    onClick={(event) => {
+                      event.preventDefault();
+                      handleMobileNavigate(href);
+                    }}
                     className={`group flex items-center justify-between rounded-xl px-4 py-3 text-sm font-semibold transition-all duration-300 ${
                       active
                         ? "bg-paper-2 text-ink"
@@ -469,7 +504,10 @@ export function Navbar() {
 
             <Link
               href="/contact"
-              onClick={() => setMobileOpen(false)}
+              onClick={(event) => {
+                event.preventDefault();
+                handleMobileNavigate("/contact");
+              }}
               className="group mt-1 flex h-11 items-center justify-center gap-2 rounded-full bg-ink text-sm font-semibold text-ivory transition-all duration-300 hover:bg-champagne"
             >
               <span>Request a Consultation</span>

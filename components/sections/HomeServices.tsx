@@ -25,9 +25,9 @@ export function HomeServices() {
             </div>
 
             <h2 className="font-display mt-6 max-w-5xl text-5xl font-medium leading-none tracking-tight text-ink sm:text-6xl lg:text-7xl">
-              A considered practice,
+              A Tailored Approach, 
               <br />
-              not a generic package.
+               Not a Generic Package.
             </h2>
           </div>
 

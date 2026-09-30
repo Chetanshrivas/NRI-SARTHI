@@ -56,23 +56,23 @@ export function HomeHero() {
         <div className="w-full max-w-4xl">
           {/* Eyebrow */}
           <motion.div
-            initial={{
-              opacity: 0,
-              x: -18,
-            }}
-            animate={{
-              opacity: 1,
-              x: 0,
-            }}
-            transition={{
-              duration: 0.7,
-              ease: "easeOut",
-            }}
-            className="flex items-center gap-3 text-xs font-semibold uppercase tracking-widest text-champagne-light"
-          >
-            <span className="h-px w-10 bg-champagne" />
-            India-side support for NRIs
-          </motion.div>
+  initial={{
+    opacity: 0,
+    x: -18,
+  }}
+  animate={{
+    opacity: 1,
+    x: 0,
+  }}
+  transition={{
+    duration: 0.7,
+    ease: "easeOut",
+  }}
+  className="flex items-center gap-3 text-xs font-semibold  tracking-widest text-champagne-light"
+>
+  <span className="h-px w-10 bg-champagne" />
+  <span>INDIA-SIDE SUPPORT FOR NRI's</span>
+</motion.div>
 
           {/* Main Heading */}
           <motion.div
